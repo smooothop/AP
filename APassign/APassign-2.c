@@ -21,7 +21,7 @@ int main() {
     FILE *sfp;
     FILE *dfp;
     char name[NUM_MAX][NAME_LEN];
-    int scores[NUM_MAX][5];  // 5번째 열 추가 (총점)
+    int scores[NUM_MAX][5];
     float avg[NUM_MAX];
     char grades[NUM_MAX];
     int i;

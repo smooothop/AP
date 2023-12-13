@@ -3,21 +3,46 @@
 #define NUM_MAX 20
 #define NAME_LEN 20
 
-void cal_grade(float avg, char *grade) {
-    if (avg >= 90.0) {
-        *grade = 'A';
-    } else if (avg >= 80.0) {
-        *grade = 'B';
-    } else if (avg >= 70.0) {
-        *grade = 'C';
-    } else if (avg >= 60.0) {
-        *grade = 'D';
-    } else {
-        *grade = 'F';
+void cal_grade(FILE *dfp, float avg) {
+    if(avg >= 90.0){
+        if(avg >= 95.0){
+            fprintf(dfp, "%s", "A+");
+        }
+        else{
+            fprintf(dfp, "%s", "A");
+        }
+    }
+    else if(avg >= 80.0){
+        if(avg >= 85.0){
+            fprintf(dfp, "%s", "B+");
+        }
+        else{
+            fprintf(dfp, "%s", "B");
+        }
+    }
+    else if(avg >= 70.0){
+        if(avg >= 75.0){
+            fprintf(dfp, "%s", "C+");
+        }
+        else{
+            fprintf(dfp, "%s", "C");
+        }
+    }
+    else if(avg >= 60.0){
+        if(avg >= 65.0){
+            fprintf(dfp, "%s", "D+");
+        }
+        else{
+            fprintf(dfp, "%s", "D");
+        }
+    }
+    else{
+        fprintf(dfp, "%s", "F");
     }
 }
 
 int main() {
+    
     FILE *sfp;
     FILE *dfp;
     char name[NUM_MAX][NAME_LEN];
@@ -41,10 +66,11 @@ int main() {
     while (fscanf(sfp, "%[^,], %d, %d, %d, %d, %d, %f",
                 name[i], &scores[i][0], &scores[i][1],
                 &scores[i][2], &scores[i][3], &scores[i][4], &avg[i]) == 7) {
-        cal_grade(avg[i], &grades[i]);
-        fprintf(dfp, "%s, %d, %d, %d, %d, %d, %.2f, %c",
+        
+        fprintf(dfp, "%s, %d, %d, %d, %d, %d, %.2f ",
                 name[i], scores[i][0], scores[i][1],
-                scores[i][2], scores[i][3], scores[i][4], avg[i], grades[i]);
+                scores[i][2], scores[i][3], scores[i][4], avg[i]);
+        cal_grade(dfp, avg[i]);
         i++;
     }
 

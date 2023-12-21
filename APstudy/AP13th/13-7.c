@@ -14,7 +14,7 @@ int main(){
         printf("\a파일을 열 수 없습니다.\n");
     else{
         while((ch = fgetc(fp)) != EOF){
-            if('0' <= ch && ch <= '9')
+            if('0' <= ch && ch <= '9') // '9' != 9
                 cnt[ch - '0']++;
         }
         fclose(fp);

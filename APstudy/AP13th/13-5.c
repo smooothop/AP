@@ -4,7 +4,7 @@
 char data_file[] = "feeling.dat";   /* 파일 이름 */
 
 /*--- 이전 날짜, 시각, 기분을 가져와 출력 ---*/
-void get_data(void){
+void get_data(){
     FILE *fp;
 
     if((fp = fopen(data_file, "r")) == NULL)    /* 열기 */

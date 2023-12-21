@@ -3,12 +3,14 @@
 int main(){
 
     FILE *fp;
+    FILE *dfp;
     char fname[256];
 
     printf("파일 이름 : ");
     scanf("%s", fname);
 
     fp = fopen(fname, "r"); /*파일 열기*/
+    dfp = fopen("data.txt", "r"); //read // "w" -> write
 
     if(fp == NULL)
         printf("이 파일은 없습니다.\n");

@@ -23,7 +23,7 @@ int main(){
             printf("이름     : "); scanf("%s", name);
             printf("키       : "); scanf("%lf", &height);
             printf("몸무게    : "); scanf("%lf", &weight);
-            fprintf(fp, "%s %f, %f\n", name, height, weight);
+            fprintf(fp, "%s %.2f, %.2f\n", name, height, weight);
         }
         fclose(fp);     /* 닫기 */
     }

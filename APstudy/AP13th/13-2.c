@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int ferase(const char *filename){
+int ferase(const char *filename){ //const = constant // private
     FILE *fp;
 
     if((fp = fopen(filename, "w")) == NULL) 

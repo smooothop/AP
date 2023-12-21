@@ -13,7 +13,7 @@ int main(){
     if((fp = fopen(fname, "r")) == NULL)    /* 열기 */
         printf("\a파일을 열 수 없습니다.\n");
     else{
-        while((ch = fgetc(fp)) != EOF)
+        while((ch = fgetc(fp)) != EOF) // fscanf = fgetc getchar// printf = putchar  fprintf = fputc // EOF = End Of File
             if(ch == '\n')
                 n_count++;
         fclose(fp);
